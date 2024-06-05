@@ -5,7 +5,7 @@ import { connectToDB } from "./lib/utils";
 import { User } from "./lib/models";
 import bcrypt from "bcrypt";
 
-const login = async (credentials) => {
+const login = async credentials => {
   try {
     connectToDB();
     const user = await User.findOne({ username: credentials.username });
@@ -40,7 +40,7 @@ export const { signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
-  // ADD ADDITIONAL INFORMATION TO SESSION
+
   callbacks: {
     async jwt({ token, user }) {
       if (user) {

@@ -13,7 +13,7 @@ import {
   MdHelpCenter,
   MdLogout,
 } from "react-icons/md";
-import { auth, signOut } from "@/app/auth";
+import { auth, signOut } from "../../../auth";
 
 const menuItems = [
   {
@@ -96,10 +96,10 @@ const Sidebar = async () => {
         </div>
       </div>
       <ul className={styles.list}>
-        {menuItems.map((cat) => (
+        {menuItems.map(cat => (
           <li key={cat.title}>
             <span className={styles.cat}>{cat.title}</span>
-            {cat.list.map((item) => (
+            {cat.list.map(item => (
               <MenuLink item={item} key={item.title} />
             ))}
           </li>
